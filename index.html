@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Title</title>
+    <!-- loading local stylesheet .css file -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <meta name= "viewport" content="width=device-width, initial-scale=1.0">
+  <body>
+    <div class="container">
+    <h1>INTERNSHIP BOARD</h1>
+    <p>Add your internships here and manage a list of all them easily!</p>
+    </div>
+<div class="vertical-menu">
+  <label for="company">Company Name:</label>
+  <select class ="companies" id= "name">
+  <option value="select">Select a company</option>
+  <option value="Google">Google</option>
+  <option value="Microsoft">Microsoft</option>
+  <option value="Meta">Meta</option>
+  <option value="Netflix">Netflix</option>
+  <option value="Uber">Uber</option>
+  <option value="Lyft">Lyft</option>
+  <option value="Amazon">Amazon</option>
+  <option value="Tesla">Tesla</option>
+  <option value="Wells Fargo">Wells Fargo</option>
+  <option value="Bank of America">Bank of America</option>
+  <option value="Humana">Humana</option>
+  <option value="Walmart">Walmart</option>
+  <option value="CVS Health">CVS Health</option>
+  <option value="AT&T">AT&T</option>
+  <option value="Comcast">Comcast</option>
+  <option value="Cisco">Cisco</option>
+  <option value="Nike">Nike</option>
+  <option value="Visa">Visa</option>
+  <option value="Adobe">Adobe</option>
+  <option value="CarMax">CarMax</option>
+  <option value="Nvidia">Nvidia</option>
+  <option value="eBay">eBay</option>
+  <option value="Liberty Mutual">Liberty Mutual</option>
+</select>
+</div>
+    <label for="start" id="date">Date Applied:</label>
+    <input class="new-item" type="date" id="start" name="trip-start" value="2022-01-01"
+           min="2022-01-01" max="2024-12-31">
+        <button id ="btn" onclick="addRow();">ADD</button>
+  </div>
+  <table class = "content-table">
+    <thead>
+      <tr>
+        <th>Company Name</th>
+        <th>Date Applied</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a href="completedfile.xlsx" download = "pdffile.xls">Download <span></span></a>
+  </body>
+    <!-- local javascript file -->
+     <script>
+      function addRow()
+            {
+                // get input values
+                var fname = document.getElementById('name').value;
+                 var lname = document.getElementById('start').value;
+                  
+                  // get the html table
+                  // 0 = the first table
+                  var table = document.getElementsByTagName('table')[0];
+                  
+                  // add new empty row to the table
+                  // 0 = in the top 
+                  // table.rows.length = the end
+                  // table.rows.length/2 = the center
+                  var newRow = table.insertRow(table.rows.length/2);
+                  
+                  // add cells to the row
+                  var cel1 = newRow.insertCell(0);
+                  var cel2 = newRow.insertCell(1);
+      
+                  // add values to the cells
+                  cel1.innerHTML = fname;
+                  cel2.innerHTML = lname;
+            }
+
+            let button = document.querySelector("body a");
+       button.addEventListener("click",()=> {
+         const span = document.querySelector("a span");
+         button.style.paddingRight = "10px";
+         span.style.visibility="visible";
+         setTimeout(() => {
+           span.style.visibility="hidden";
+           button.style.transition = ".3s ease-in-out";
+           button.style.paddingRight = "0px";
+         }, 3000);
+       })
+  </script> 
+    
+  
+
+</html>
