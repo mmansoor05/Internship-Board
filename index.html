@@ -5,6 +5,9 @@
     <title>Title</title>
     <!-- loading local stylesheet .css file -->
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+     <!-- loading local javascript .js file -->
+    <script src="script.js"></script>
   </head>
   <meta name= "viewport" content="width=device-width, initial-scale=1.0">
   <body>
@@ -64,7 +67,9 @@
       </tr>
     </tbody>
   </table>
-  <a href="completedfile.xlsx" download = "pdffile.xls">Download <span></span></a>
+  <div class="col-md">
+    <button class="btn-primary" id = "download">Download</button>
+</div>
   </body>
    
    
